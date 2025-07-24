@@ -25,7 +25,10 @@ public class UserController {
     private static final long EXPIRATION = 7 * 24 * 60 * 60 * 1000L;
 
     @PostMapping("/login")
-    public Map<String, Object> login(@RequestParam String username, @RequestParam String password) {
+    public Map<String, Object> login(@RequestBody LoginRequest loginRequest) {
+        String username = loginRequest.getUsername();
+        String password = loginRequest.getPassword();
+
         User user = userRepository.findByUsername(username);
         Map<String, Object> result = new HashMap<>();
         if (user == null) {
