@@ -134,6 +134,10 @@ public class UserController {
 
                 createParentMenuItem("/tools", "tools", "2.svg", "便捷工具", java.util.Arrays.asList(
                         createMenuItem("/convert", "convert", "3.svg", "m3u8转mp4")
+                )),
+
+                createParentMenuItem("/salary", "salary", "2.svg", "工薪管理", java.util.Arrays.asList(
+                        createMenuItem("/management", "management", "3.svg", "薪水")
                 ))
         );
 
